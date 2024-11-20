@@ -8,32 +8,23 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Função que calcula e imprime a quantidade de notas e moedas
 void calcularNotasMoedas(float valor) {
-    // Convertendo para centavos para evitar problemas com ponto flutuante
     int centavos = round(valor * 100);
 
-
-    // Vetores que armazenam os valores das notas e moedas
     int notas[] = {10000, 5000, 2000, 1000, 500, 200};
     int moedas[] = {100, 50, 25, 10, 5, 1};
 
-    // Vetores que armazenam a quantidade de cada nota e moeda
     int qtdNotas[6] = {0}, qtdMoedas[6] = {0};
 
-    // Calculando a quantidade de notas
     for (int i = 0; i < 6; i++) {
         qtdNotas[i] = centavos / notas[i];
         centavos %= notas[i];
     }
 
-    // Calculando a quantidade de moedas
     for (int i = 0; i < 6; i++) {
         qtdMoedas[i] = centavos / moedas[i];
         centavos %= moedas[i];
     }
-
-    // Imprimindo o resultado
     
     cout << "NOTAS:" << "\n";
     cout << qtdNotas[0] << " nota(s) de R$ 100.00" << "\n";
@@ -54,8 +45,8 @@ void calcularNotasMoedas(float valor) {
 }
 
 int main() {
-    float valor = 504.3;  // Valor a ser passado para a função
-    calcularNotasMoedas(valor);  // Chamando a função com o valor
+    float valor = 504.3;  
+    calcularNotasMoedas(valor);  
 
     return 0;
 }
